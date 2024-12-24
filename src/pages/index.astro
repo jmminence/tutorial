@@ -1,9 +1,10 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
-const pageTitle = "Home";
+const {pageTitle} = Astro.props;
 ---
 
 <html lang="en">
@@ -17,6 +18,10 @@ const pageTitle = "Home";
   <body>
     <Header />
     <h1>My site {pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle}>
+      <h2>My awesome blog subtitle</h2>
+    </BaseLayout>
     <Footer />
+    <script src="../scripts/menu.js"></script>
   </body>
 </html>
